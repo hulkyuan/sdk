@@ -1,10 +1,14 @@
 import React from 'react';
-// import { ComponentDocument } from 'kts-component-document';
+import { DocumentCompare } from 'kts-component-document';
 
 export default () => {
     return (
         <div>
-            {/* <ComponentDocument /> */}
+            <DocumentCompare 
+                targetDocUuid='58018b85-c7b8-4ebf-b2d0-86bafba7eb23'
+                targetDocumentType='Invoice'
+                targetLineID= '862905464210325504'
+            />
         </div>
     );
 }
