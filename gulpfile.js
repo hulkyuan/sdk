@@ -6,7 +6,7 @@ const minifycss = require('gulp-minify-css');
 const concat = require('gulp-concat');
 const tsProject = ts.createProject('tsconfig.gulp.json');
 const merge = require('merge2');
-const root = 'src/node_modules/kts-component-document';
+const root = 'src/node_modules/kts-component-document/**/';
 
 // 编译 ts
 gulp.task('default', async () => {
