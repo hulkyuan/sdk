@@ -242,7 +242,7 @@ class App extends React.Component<any, any> {
         {
           <div className="App" style={{ padding: 10 }}>
             <p>
-              <Button style={{ marginRight: 20 }} onClick={() => { this.onKaiju(); }} className='kts-but-default'>开票</Button>
+              <Button style={{ marginRight: 20 }} onClick={this.onInvoiceMake} className='kts-but-default'>开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceListMake} className='kts-but-default'>清单开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceBatchMake} className='kts-but-default'>批量开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onChaXun} className='kts-but-default'>查询当前开具发票号码</Button>
