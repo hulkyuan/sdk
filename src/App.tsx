@@ -10,7 +10,7 @@ class App extends React.Component<any, any> {
     buyerTaxID: '91500103MA5UAHBY29',
     buyerAddrTel: '重庆市渝中区华盛路1号2企业,023-89038588',
     buyerFinancialAccount: '中行重庆市巴南支行113008319865',
-    taxExclusiveTotalAmount: '232',
+    taxExclusiveTotalAmount: '348',
     taxTotalAmount: '0',
     invoiceCode: "31000111111",
     invoiceNo: '10010027',
@@ -32,6 +32,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '0',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       },
       {
         item: '定子铁芯总成',
@@ -42,6 +47,28 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '0',
+        lineDiscount: '3',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001',
+        discountAmount:'-10'
+      },
+      {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+        taxSign: '0',
+        lineDiscount: '3',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001',
+        discountAmount:'-10'
       }
     ]
   };
@@ -215,7 +242,7 @@ class App extends React.Component<any, any> {
         {
           <div className="App" style={{ padding: 10 }}>
             <p>
-              <Button style={{ marginRight: 20 }} onClick={this.onInvoiceMake} className='kts-but-default'>开票</Button>
+              <Button style={{ marginRight: 20 }} onClick={() => { this.onKaiju(); }} className='kts-but-default'>开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceListMake} className='kts-but-default'>清单开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceBatchMake} className='kts-but-default'>批量开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onChaXun} className='kts-but-default'>查询当前开具发票号码</Button>
