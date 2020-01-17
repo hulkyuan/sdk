@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Input } from 'antd';
+import { Button, Input, Form } from 'antd';
 import { InvoiceEngine } from 'kts-invoice-engine';
 const { TextArea } = Input;
 class App extends React.Component<any, any> {
@@ -45,14 +45,127 @@ class App extends React.Component<any, any> {
       }
     ]
   };
-  invalidD={ invoiceType: '1', invoiceCode: '3100153130', invoiceNo: '54646508' };
+  invoiceData2 = {
+    buyerName: '北京天宏迅联智慧网络科技有限公司',
+    buyerTaxID: '91500103MA5UAHBY29',
+    buyerAddrTel: '重庆市渝中区华盛路1号2企业,023-89038588',
+    buyerFinancialAccount: '中行重庆市巴南支行113008319865',
+    taxExclusiveTotalAmount: '1160',
+    taxTotalAmount: '0',
+    invoiceCode: "31000111111",
+    invoiceNo: '10010027',
+    invoiceType: '1',
+    payee: '收款人',
+    checker: '复核人',
+    note: 'RE2019082000000005',
+    sellerFinancialAccount: '9150011375006381XB',
+    sellerTaxID: '91500106771798823F',
+    sellerName: '重庆兆富电器有限公司',
+    sellerAddrTel: '重庆市巴南区宗申工业园 66372638',
+    goodsInfos: [
+      {
+        item: '转子铁芯',
+        specification: 'SDM500(30H)',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      },
+      {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      }, {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '116',
+        amount: '116',
+        taxScheme: '0.16',
+        taxAmount: '0',
+      },
+    ]
+  };
+  invalidD = { invoiceType: '1', invoiceCode: '3100153130', invoiceNo: '54646508' };
   constructor(props: any) {
     super(props);
     this.state = {
       selectValue: 'jinhang',
       changeInput: '',
       info: '',
-      invalidData:{ invoiceType: '1', invoiceCode: '3100153130', invoiceNo: '54646508' },
+      batchList: 5,
+      invalidData: { invoiceType: '1', invoiceCode: '3100153130', invoiceNo: '54646508' },
       textInput: {
         buyerName: '北京天宏迅联智慧网络科技有限公司',
         buyerTaxID: '91500103MA5UAHBY29',
@@ -96,16 +209,17 @@ class App extends React.Component<any, any> {
     };
   }
   render() {
+    const { getFieldDecorator } = this.props.form;
     return (
       <div>
         {
           <div className="App" style={{ padding: 10 }}>
-            {/* <Select defaultValue={this.state.selectValue} onChange={this.onSelectChange}>
-              <Option value="jinhang">金杭</Option>
-            </Select> */}
             <p>
-              <Button style={{ marginRight: 20 }} onClick={this.onKaiju} className='kts-but-default'>开票</Button>
+              <Button style={{ marginRight: 20 }} onClick={this.onInvoiceMake} className='kts-but-default'>开票</Button>
+              <Button style={{ marginRight: 20 }} onClick={this.onInvoiceListMake} className='kts-but-default'>清单开票</Button>
+              <Button style={{ marginRight: 20 }} onClick={this.onInvoiceBatchMake} className='kts-but-default'>批量开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onChaXun} className='kts-but-default'>查询当前开具发票号码</Button>
+
               <Button onClick={this.onApply}>导入下方开票数据</Button>
             </p>
             <p>开票数据:</p>
@@ -117,7 +231,7 @@ class App extends React.Component<any, any> {
               />
             </p>
 
-            <p>错误信息:</p>
+            <p>输出信息:</p>
             <p><TextArea value={this.state.info} rows={4}></TextArea></p>
             <p><Button style={{ marginRight: 20 }} onClick={this.onInvalid} className='kts-but-default'>作废</Button></p>
             <p>作废发票信息:</p>
@@ -129,12 +243,36 @@ class App extends React.Component<any, any> {
                 value={JSON.stringify(this.state.invalidData)}
               />
             </p>
+            <Form layout="inline" onSubmit={this.handleSubmit}>
+              <Form.Item>
+                {getFieldDecorator('invoiceCode')(
+                  <Input placeholder="发票代码"></Input>
+                )}
+              </Form.Item>
+              <Form.Item>
+                {getFieldDecorator('invoiceNo')(
+                  <Input placeholder="发票号码"></Input>
+                )}
+              </Form.Item>
+              <Form.Item>
+                <Button style={{ marginRight: 20 }} htmlType="submit" className='kts-but-default'>查询发票</Button>
+              </Form.Item>
+            </Form>
+
           </div>
         }
 
       </div>
     );
   }
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        this.onIsMake(values);
+      }
+    });
+  };
   onApply = () => {
     this.invoiceData = this.state.textInput;
   }
@@ -162,34 +300,113 @@ class App extends React.Component<any, any> {
       selectValue: value
     });
   }
+  onInvoiceMake = async () => {
+    const invoiceInfo = await this.onChaXun();
+    if (invoiceInfo !== false) {
+      const str = `当前将要开具的是专用发票，发票号码${invoiceInfo.invoiceCode},代码为${invoiceInfo.invoiceNo}，请确保装入打印机中的纸质发票种类、代码、号码与之一致，点击确认后系统将会开具并打印该发票。`;
+      this.setState({
+        info: str
+      });
+      this.onKaiju();
+    }
+  }
+  onInvoiceListMake = async () => {
+    const invoiceInfo = await this.onChaXun();
+    if (invoiceInfo !== false) {
+      const str = `当前将要开具的是专用发票，发票号码${invoiceInfo.invoiceCode},代码为${invoiceInfo.invoiceNo}，请确保装入打印机中的纸质发票种类、代码、号码与之一致，点击确认后系统将会开具并打印该发票。`;
+      this.setState({
+        info: str
+      });
+      this.onKaiju(this.invoiceData2);
+    }
+  }
+  onInvoiceBatchMake = async () => {
+    const invoiceInfo = await this.onChaXun();
+    const { batchList } = this.state;
+    if (invoiceInfo !== false) {
+      const lastNo = Number(invoiceInfo.invoiceNo) + batchList;
+      const str = `当前将要开具的是专用发票，共${batchList}张，发票代码/号码段为：${invoiceInfo.invoiceCode}/${invoiceInfo.invoiceNo}-${invoiceInfo.invoiceCode}/${lastNo}，请确保装入打印机中的纸质发票种类、代码、号码与之一致，点击确认后系统将会开具并打印这些发票。`;
+      this.setState({
+        info: str
+      });
+      this.onBatchKaiju();
+    }
+  }
   //开具
-  onKaiju = () => {
+  onKaiju = async (data?): Promise<any> => {
     const engine = new InvoiceEngine(this.state.selectValue);
-    engine.fpkj(this.URL, this.invoiceData).then((res) => {
+    return engine.fpkj(this.URL, data || this.invoiceData).then((res) => {
       console.log(res);
       this.setState({
         info: JSON.stringify(res)
       });
+      if (res.returncode === '0') {
+        return true;
+      } else {
+        return false;
+      }
+
     }).catch((res) => {
-      console.log(res);
+      //console.log(res);
       this.setState({
         info: res
       });
+      return false
     });
   }
+  onBatchKaiju = async () => {
+    const { batchList } = this.state;
+    for (let i = 0; i <= batchList; i++) {
+      let p: boolean;
+      if (i >= 1) {
+        //p = await this.onKaiju(this.invoiceData2);
+        p = await this.onKaiju();
+      } else {
+        p = await this.onKaiju();
+      }
+      if (p === false) {
+        console.log('break at loop :' + i);
+        break
+      }
+    }
+  }
   //查询当前发票
-  onChaXun = () => {
+  onChaXun = (): Promise<any> => {
     const engine = new InvoiceEngine(this.state.selectValue);
-    engine.fphm(this.URL).then((res) => {
-      console.log(res);
+    return engine.fphm(this.URL).then((res) => {
+      //console.log(res);
       this.setState({
         info: JSON.stringify(res)
       });
+      if (res.returncode === '0') {
+        return res;
+      } else {
+        return false;
+      }
     }).catch((res) => {
-      console.log(res);
+      //console.log(res);
       this.setState({
         info: res
       });
+      return false;
+    });
+  }
+  onIsMake = (data): Promise<any> => {
+    const engine = new InvoiceEngine(this.state.selectValue);
+    return engine.fpcx(this.URL, data).then((res) => {
+      this.setState({
+        info: JSON.stringify(res)
+      });
+      if (res.returncode === '0') {
+        return res;
+      } else {
+        return false;
+      }
+    }).catch((res) => {
+      this.setState({
+        info: res
+      });
+      return false;
     });
   }
   onInvalid = () => {
@@ -215,4 +432,5 @@ class App extends React.Component<any, any> {
   }
 }
 
-export default App;
+const WrappedHorizontalLoginForm = Form.create({})(App);
+export default WrappedHorizontalLoginForm;
