@@ -8,10 +8,11 @@ class App extends React.Component<any, any> {
   invoiceData = {
     buyerName: '北京天宏迅联智慧网络科技有限公司',
     buyerTaxID: '91500103MA5UAHBY29',
+    billingData:'X150208001',
     buyerAddrTel: '重庆市渝中区华盛路1号2企业,023-89038588',
     buyerFinancialAccount: '中行重庆市巴南支行113008319865',
-    taxExclusiveTotalAmount: '348',
-    taxTotalAmount: '0',
+    taxExclusiveTotalAmount: '280',
+    taxTotalAmount: '44.8',
     invoiceCode: "31000111111",
     invoiceNo: '10010027',
     invoiceType: '1',
@@ -22,16 +23,19 @@ class App extends React.Component<any, any> {
     sellerTaxID: '91500106771798823F',
     sellerName: '重庆兆富电器有限公司',
     sellerAddrTel: '重庆市巴南区宗申工业园 66372638',
+    mainGoodsName:'主要商品',
+    comprehensiveTaxRate:'0.16',
+    inventory:'8',
     goodsInfos: [
       {
         item: '转子铁芯',
         specification: 'SDM500(30H)',
         measurementDimension: '件',
         quantity: '1',
-        price: '116',
-        amount: '116',
+        price: '100',
+        amount: '100',
         taxScheme: '0.16',
-        taxAmount: '0',
+        taxAmount: '16',
         taxSign: '0',
         lineDiscount: '0',
         goodsTaxItem: '4001',
@@ -43,10 +47,10 @@ class App extends React.Component<any, any> {
         specification: 'SDM500(整体式30厚）',
         measurementDimension: '件',
         quantity: '1',
-        price: '116',
-        amount: '116',
+        price: '100',
+        amount: '100',
         taxScheme: '0.16',
-        taxAmount: '0',
+        taxAmount: '16',
         taxSign: '0',
         lineDiscount: '3',
         goodsTaxItem: '4001',
@@ -59,10 +63,10 @@ class App extends React.Component<any, any> {
         specification: 'SDM500(整体式30厚）',
         measurementDimension: '件',
         quantity: '1',
-        price: '116',
-        amount: '116',
+        price: '100',
+        amount: '100',
         taxScheme: '0.16',
-        taxAmount: '0',
+        taxAmount: '16',
         taxSign: '0',
         lineDiscount: '3',
         goodsTaxItem: '4001',
@@ -75,6 +79,7 @@ class App extends React.Component<any, any> {
   invoiceData2 = {
     buyerName: '北京天宏迅联智慧网络科技有限公司',
     buyerTaxID: '91500103MA5UAHBY29',
+    billingData:'X150208001',
     buyerAddrTel: '重庆市渝中区华盛路1号2企业,023-89038588',
     buyerFinancialAccount: '中行重庆市巴南支行113008319865',
     taxExclusiveTotalAmount: '1160',
@@ -89,6 +94,9 @@ class App extends React.Component<any, any> {
     sellerTaxID: '91500106771798823F',
     sellerName: '重庆兆富电器有限公司',
     sellerAddrTel: '重庆市巴南区宗申工业园 66372638',
+    mainGoodsName:'主要商品',
+    comprehensiveTaxRate:'0.16',
+    inventory:'8',
     goodsInfos: [
       {
         item: '转子铁芯',
@@ -99,6 +107,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       },
       {
         item: '定子铁芯总成',
@@ -109,6 +122,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -118,6 +136,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -127,6 +150,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -136,6 +164,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -145,6 +178,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -154,6 +192,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -163,6 +206,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -172,6 +220,11 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       }, {
         item: '定子铁芯总成',
         specification: 'SDM500(整体式30厚）',
@@ -181,7 +234,83 @@ class App extends React.Component<any, any> {
         amount: '116',
         taxScheme: '0.16',
         taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
       },
+    ]
+  };
+  //带税额的数据
+  invoiceData3 = {
+    buyerName: '北京天宏迅联智慧网络科技有限公司',
+    buyerTaxID: '91500103MA5UAHBY29',
+    buyerAddrTel: '重庆市渝中区华盛路1号2企业,023-89038588',
+    buyerFinancialAccount: '中行重庆市巴南支行113008319865',
+    taxExclusiveTotalAmount: '276.8',
+    taxTotalAmount: '23.2',
+    invoiceCode: "31000111111",
+    invoiceNo: '10010027',
+    invoiceType: '1',
+    payee: '收款人',
+    checker: '复核人',
+    note: 'RE2019082000000005',
+    sellerFinancialAccount: '9150011375006381XB',
+    sellerTaxID: '91500106771798823F',
+    sellerName: '重庆兆富电器有限公司',
+    sellerAddrTel: '重庆市巴南区宗申工业园 66372638',
+    mainGoodsName:'主要商品',
+    comprehensiveTaxRate:'0.16',
+    inventory:'8',
+    goodsInfos: [
+      {
+        item: '转子铁芯',
+        specification: 'SDM500(30H)',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '100',
+        amount: '100',
+        taxScheme: '0.16',
+        taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '0',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001'
+      },
+      {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '100',
+        amount: '100',
+        taxScheme: '0.16',
+        taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '3',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001',
+        discountAmount:'-10'
+      },
+      {
+        item: '定子铁芯总成',
+        specification: 'SDM500(整体式30厚）',
+        measurementDimension: '件',
+        quantity: '1',
+        price: '100',
+        amount: '100',
+        taxScheme: '0.16',
+        taxAmount: '0',
+        taxSign: '3',
+        lineDiscount: '3',
+        goodsTaxItem: '4001',
+        taxCode: '1090602050000000000',
+        goodsCode: '001',
+        discountAmount:'-10'
+      }
     ]
   };
   invalidD = { invoiceType: '1', invoiceCode: '3100153130', invoiceNo: '54646508' };
@@ -285,10 +414,8 @@ class App extends React.Component<any, any> {
                 <Button style={{ marginRight: 20 }} htmlType="submit" className='kts-but-default'>查询发票</Button>
               </Form.Item>
             </Form>
-
           </div>
         }
-
       </div>
     );
   }
