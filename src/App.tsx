@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Button, Input, Form } from 'antd';
+import { Button, Input, Form, Select } from 'antd';
 import { InvoiceEngine } from 'kts-invoice-engine';
 const { TextArea } = Input;
+const { Option } = Select;
 class App extends React.Component<any, any> {
   REMOTE_URL = 'http://116.62.164.48:10003/ticket';
   URL = "http://127.0.0.1:8089/soap/Ifwkpjk_W";
@@ -359,12 +360,15 @@ class App extends React.Component<any, any> {
         {
           <div className="App" style={{ padding: 10 }}>
             <p>
+              <Select defaultValue="jinhang" style={{ width: 120,marginRight: 20 }} onChange={this.onSelectChange}>
+                <Option value="jinhang">金杭</Option>
+                <Option value="moni">模拟开票</Option>
+              </Select>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceMake} className='kts-but-default'>开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onRedInvoiceMake} className='kts-but-default'>开红票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceListMake} className='kts-but-default'>清单开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onInvoiceBatchMake} className='kts-but-default'>批量开票</Button>
               <Button style={{ marginRight: 20 }} onClick={this.onChaXun} className='kts-but-default'>查询当前开具发票号码</Button>
-
               <Button onClick={this.onApply}>导入下方开票数据</Button>
             </p>
             <p>开票数据:</p>
