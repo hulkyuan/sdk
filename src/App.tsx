@@ -520,7 +520,7 @@ class App extends React.Component<any, any> {
       }
     }
   }
-  //查询当前发票
+  //查询当前即将开的发票
   onChaXun = (): Promise<any> => {
     const engine = new InvoiceEngine(this.state.selectValue);
     return engine.fphm(this.URL).then((res) => {
