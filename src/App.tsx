@@ -3,6 +3,9 @@ import { Button, Input, Form, Select } from 'antd';
 import { InvoiceEngine } from 'kts-invoice-engine';
 const { TextArea } = Input;
 const { Option } = Select;
+/**
+ * 如何调用 演示
+ */
 class App extends React.Component<any, any> {
   REMOTE_URL = 'http://116.62.164.48:10003/ticket';
   URL = "http://127.0.0.1:8089/soap/Ifwkpjk_W";
