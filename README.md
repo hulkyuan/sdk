@@ -1,4 +1,2 @@
-## 轻量级的 分模块方式的数据状态管理
-
-### github
-http://gitlab.kingxunlian.com/front-end/component/kts-invoice-engine
+调用开票供应商接口，对他们的接口进行封装
+目前只有金杭的接口封装，其他供应商暂停。
